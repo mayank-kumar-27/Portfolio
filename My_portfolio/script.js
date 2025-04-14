@@ -166,3 +166,60 @@ document.addEventListener("DOMContentLoaded", () => {
         observer.observe(section);
     });
 });
+
+// Mobile menu functionality
+function setupMobileMenu() {
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const navMenu = document.querySelector('nav .right ul');
+    const menuOverlay = document.getElementById('menuOverlay');
+    const menuLinks = document.querySelectorAll('nav .right ul li a');
+    
+    if (!mobileMenuBtn || !navMenu || !menuOverlay) return;
+    
+    // Toggle menu on button click
+    mobileMenuBtn.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+        menuOverlay.classList.toggle('active');
+        document.body.classList.toggle('menu-open');
+        
+        // Change icon based on menu state
+        const icon = mobileMenuBtn.querySelector('i');
+        if (navMenu.classList.contains('active')) {
+            icon.classList.remove('fa-bars');
+            icon.classList.add('fa-times');
+        } else {
+            icon.classList.remove('fa-times');
+            icon.classList.add('fa-bars');
+        }
+    });
+    
+    // Close menu when clicking overlay
+    menuOverlay.addEventListener('click', () => {
+        navMenu.classList.remove('active');
+        menuOverlay.classList.remove('active');
+        document.body.classList.remove('menu-open');
+        
+        const icon = mobileMenuBtn.querySelector('i');
+        icon.classList.remove('fa-times');
+        icon.classList.add('fa-bars');
+    });
+    
+    // Close menu when clicking links
+    menuLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            navMenu.classList.remove('active');
+            menuOverlay.classList.remove('active');
+            document.body.classList.remove('menu-open');
+            
+            const icon = mobileMenuBtn.querySelector('i');
+            icon.classList.remove('fa-times');
+            icon.classList.add('fa-bars');
+        });
+    });
+}
+
+// Add this function call to your window.onload or DOMContentLoaded event
+document.addEventListener('DOMContentLoaded', () => {
+    // Your existing code
+    setupMobileMenu(); // Add this line
+});

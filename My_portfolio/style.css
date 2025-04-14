@@ -875,7 +875,61 @@ textarea:focus {
     }
 }
 
-/* Body state when menu is open */
-body.menu-open {
-    overflow: hidden;
+/* Add these styles to your style.css file */
+
+/* Mobile responsive adjustments */
+@media (max-width: 768px) {
+
+    /* Hide the entire right navigation on mobile */
+    nav .right {
+        display: none;
+    }
+
+    /* Center the flashing header in mobile view */
+    nav {
+        justify-content: center;
+    }
+
+    nav .left {
+        /* Remove any existing positioning if needed */
+        position: static;
+        transform: none;
+        /* Make sure it's centered */
+        text-align: center;
+    }
+}
+
+/* Optimize contact section for mobile */
+@media (max-width: 576px) {
+    .contact-container {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-item {
+        padding: 1rem;
+    }
+
+    .contact-form {
+        padding: 1.5rem;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        padding: 0.8rem;
+    }
+
+    .form-group textarea {
+        min-height: 120px;
+    }
+
+    /* Fix button stacking in mobile view */
+    .contact-form .btn {
+        width: 100%;
+        margin-right: 0;
+    }
+
+    /* Add some space between contact info items */
+    .contact-info {
+        gap: 1rem;
+    }
 }
