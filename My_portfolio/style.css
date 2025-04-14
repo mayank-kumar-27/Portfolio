@@ -277,6 +277,7 @@ swiper-container.card-swiper {
     width: 240px;
     height: 320px;
     margin: 0 auto;
+     --swiper-space-between: 50px;
 }
 
 swiper-slide {
