@@ -899,37 +899,245 @@ textarea:focus {
     }
 }
 
-/* Optimize contact section for mobile */
+/* Fix horizontal scrolling issues */
+html,
+body {
+    overflow-x: hidden;
+    width: 100%;
+    position: relative;
+}
+
+/* Mobile responsive adjustments - expanded */
+@media (max-width: 768px) {
+
+    /* Hide the entire right navigation on mobile */
+    nav .right {
+        display: none;
+    }
+
+    /* Center the flashing header in mobile view */
+    nav {
+        justify-content: center;
+    }
+
+    nav .left {
+        /* Remove any existing positioning if needed */
+        position: static;
+        transform: none;
+        /* Make sure it's centered */
+        text-align: center;
+    }
+
+    /* Fix first section layout for mobile */
+    .firstsection {
+        flex-direction: column;
+        gap: 2rem;
+        padding: 120px 20px 60px;
+        min-height: auto;
+    }
+
+    .leftsection,
+    .rightsection {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    /* Adjust image container for mobile */
+    .image-container {
+        max-width: 100%;
+    }
+
+    /* Fix section paddings */
+    .section {
+        padding: 60px 20px;
+    }
+}
+
+/* Further optimize for very small screens */
 @media (max-width: 576px) {
+
+    /* Fix section margins and paddings */
+    .section {
+        padding: 50px 15px;
+    }
+
+    .about-section,
+    .skills-section,
+    .projects-section,
+    .contact-section {
+        margin-left: 15px;
+        margin-right: 15px;
+        padding: 1.5rem;
+        width: calc(100% - 30px);
+        box-sizing: border-box;
+    }
+
+    /* Fix projects container */
+    .projects-container {
+        grid-template-columns: 1fr;
+        width: 100%;
+    }
+
+    .project-card {
+        width: 100%;
+    }
+
+    /* Fix skills container */
+    .skills-container {
+        grid-template-columns: 1fr;
+        width: 100%;
+    }
+
+    /* Fix footer */
+    .footer-content {
+        flex-direction: column;
+        gap: 1.5rem;
+        text-align: center;
+        padding: 0 15px;
+    }
+
+    .footer-links {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .footer-links a {
+        margin: 0.5rem;
+    }
+}
+
+/* Fix for very small screens */
+@media (max-width: 360px) {
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    .greeting {
+        font-size: 1.1rem;
+    }
+
+    .subtitle {
+        font-size: 0.9rem;
+    }
+
+    /* Adjust card swiper size for very small screens */
+    swiper-container.card-swiper {
+        width: 180px;
+        height: 250px;
+    }
+
+    /* Fix button sizes */
+    .btn {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* Enhanced contact section optimization for very small screens */
+
+/* General contact section fixes for mobile */
+@media (max-width: 576px) {
+
+    /* Contact container */
+    .contact-section {
+        padding: 60px 15px;
+    }
+
     .contact-container {
         grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    /* Contact info blocks */
+    .contact-info {
+        gap: 0.8rem;
     }
 
     .contact-item {
-        padding: 1rem;
+        padding: 0.8rem;
+        gap: 0.5rem;
+        flex-direction: row;
+        align-items: center;
     }
 
+    .contact-icon {
+        font-size: 1.2rem;
+        min-width: 25px;
+    }
+
+    .contact-text h3 {
+        font-size: 1rem;
+        margin-bottom: 0.1rem;
+    }
+
+    .contact-text p {
+        font-size: 0.9rem;
+        margin-bottom: 0;
+        word-break: break-word;
+        /* Prevent overflow on small devices */
+    }
+
+    /* Form elements */
     .contact-form {
-        padding: 1.5rem;
+        padding: 1.2rem;
+        margin-top: 0.5rem;
+    }
+
+    .form-group {
+        margin-bottom: 0.8rem;
     }
 
     .form-group input,
     .form-group textarea {
-        padding: 0.8rem;
+        padding: 0.7rem;
+        font-size: 0.9rem;
+        border-radius: 6px;
     }
 
     .form-group textarea {
-        min-height: 120px;
+        min-height: 100px;
     }
 
-    /* Fix button stacking in mobile view */
+    /* Submit button */
     .contact-form .btn {
         width: 100%;
-        margin-right: 0;
+        padding: 0.7rem 1rem;
+        font-size: 0.9rem;
+        margin-top: 0.5rem;
+    }
+}
+
+/* Further optimization for extremely small screens */
+@media (max-width: 360px) {
+    .contact-item {
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+        padding: 0.7rem;
     }
 
-    /* Add some space between contact info items */
-    .contact-info {
-        gap: 1rem;
+    .contact-icon {
+        margin-bottom: 0.3rem;
+    }
+
+    .contact-text h3 {
+        font-size: 0.95rem;
+    }
+
+    .contact-text p {
+        font-size: 0.85rem;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        padding: 0.6rem;
+    }
+
+    .contact-form {
+        padding: 1rem;
+    }
+
+    .section-title h2 {
+        font-size: 1.4rem;
     }
 }
