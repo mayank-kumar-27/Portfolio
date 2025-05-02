@@ -14,7 +14,7 @@ This repository contains the source code for my personal portfolio website, show
 🔗 **Live Demo:** [https://mayank-kumar-portfolio.vercel.app/](https://mayank-kumar-portfolio.vercel.app/)
 
 <div align="center">
-  <img src="https://mayank-kumar-portfolio.vercel.app/" alt="Portfolio Screenshot" width="80%">
+  <img src="https://github.com/mayank-kumar-27/Portfolio/blob/main/My_portfolio/Screenshot%202025-05-03%20034525.png" alt="Portfolio Screenshot" width="80%">
 </div>
 
 ## ✨ Features
