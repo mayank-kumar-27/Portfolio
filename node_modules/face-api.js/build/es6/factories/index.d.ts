@@ -2,5 +2,3 @@ export * from './WithFaceDescriptor';
 export * from './WithFaceDetection';
 export * from './WithFaceExpressions';
 export * from './WithFaceLandmarks';
-export * from './WithAge';
-export * from './WithGender';

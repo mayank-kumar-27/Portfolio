@@ -1,0 +1,37 @@
+{
+  "name": "tfjs-image-recognition-base",
+  "version": "0.6.2",
+  "description": "A shared codebase for face-api.js and tfjs-tiny-yolo-v2.",
+  "module": "./build/es6/index.js",
+  "main": "./build/commonjs/index.js",
+  "typings": "./build/commonjs/index.d.ts",
+  "scripts": {
+    "tsc": "tsc",
+    "tsc-es6": "tsc --p tsconfig.es6.json",
+    "build": "rm -rf ./build && npm run tsc && npm run tsc-es6",
+    "test": "karma start",
+    "test-browser": "karma start --single-run",
+    "test-node": "ts-node -r ./test/env.node.ts node_modules/jasmine/bin/jasmine --config=jasmine-node.json",
+    "test-all": "npm run test-browser && npm run test-node"
+  },
+  "author": "justadudewhohacks",
+  "license": "MIT",
+  "dependencies": {
+    "@tensorflow/tfjs-core": "^1.2.9",
+    "tslib": "^1.10.0"
+  },
+  "devDependencies": {
+    "@tensorflow/tfjs-node": "^1.2.9",
+    "@types/jasmine": "^3.3.13",
+    "@types/node": "^12.0.10",
+    "canvas": "^2.5.0",
+    "jasmine": "^3.4.0",
+    "jasmine-core": "^3.4.0",
+    "karma": "^4.1.0",
+    "karma-chrome-launcher": "^2.2.0",
+    "karma-jasmine": "^2.0.1",
+    "karma-typescript": "^4.1.0",
+    "ts-node": "^8.3.0",
+    "typescript": "^3.5.2"
+  }
+}

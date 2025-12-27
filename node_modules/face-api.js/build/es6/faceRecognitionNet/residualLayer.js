@@ -1,4 +1,3 @@
-import { __spreadArrays } from "tslib";
 import * as tf from '@tensorflow/tfjs-core';
 import { conv, convDown, convNoRelu } from './convLayer';
 export function residual(x, params) {
@@ -16,11 +15,11 @@ export function residualDown(x, params) {
     var isPad = pooled.shape[3] !== out.shape[3];
     var isAdjustShape = pooled.shape[1] !== out.shape[1] || pooled.shape[2] !== out.shape[2];
     if (isAdjustShape) {
-        var padShapeX = __spreadArrays(out.shape);
+        var padShapeX = out.shape.slice();
         padShapeX[1] = 1;
         var zerosW = tf.zeros(padShapeX);
         out = tf.concat([out, zerosW], 1);
-        var padShapeY = __spreadArrays(out.shape);
+        var padShapeY = out.shape.slice();
         padShapeY[2] = 1;
         var zerosH = tf.zeros(padShapeY);
         out = tf.concat([out, zerosH], 2);
