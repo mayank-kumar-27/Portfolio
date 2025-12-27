@@ -1,86 +1,108 @@
 # Mayank Kumar - Portfolio Website
 
 <div align="center">
-  <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5">
-  <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3">
-  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript">
+  <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React">
+  <img src="https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white" alt="Vite">
+  <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="Tailwind">
   <img src="https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white" alt="Vercel">
 </div>
 
 ## 📋 Overview
 
-This repository contains the source code for my personal portfolio website, showcasing my projects, skills, and professional journey as a Computer Science student. Built with pure HTML, CSS, and JavaScript, this site demonstrates my front-end development skills while maintaining excellent performance and responsiveness.
+This repository contains the source code for my personal portfolio website, showcasing my projects, skills, and professional journey. Built with modern web tooling (React + Vite + Tailwind CSS), the site focuses on performance, responsiveness, and crisp visual design.
 
-🔗 **Live Demo:** [https://mayank-kumar-portfolio.vercel.app/](https://mayank-kumar-portfolio.vercel.app/)
+🔗 **Live Demo:** https://mayank-kumar-portfolio.vercel.app/
 
-<div align="center">
-  <img src="https://github.com/mayank-kumar-27/Portfolio/blob/main/My_portfolio/Screenshot%202025-05-03%20034525.png" alt="Portfolio Screenshot" width="80%">
-</div>
+---
 
 ## ✨ Features
 
-- **Responsive Design** - Fully optimized for all device sizes
-- **Pure HTML/CSS/JS** - No frameworks or libraries, demonstrating core web development skills
-- **Project Showcase** - Highlights my best work with descriptions and links
-- **Skills Section** - Visual representation of my technical capabilities
-- **Contact Form** - Easy-to-use form for potential collaborators to reach out
-- **Smooth Animations** - Subtle CSS animations for enhanced user experience
-- **Performance Optimized** - Fast loading times and efficient code
+- **Responsive Design** — Fully optimized for all device sizes ✅
+- **Modern Stack** — React + Vite + Tailwind for fast development and small bundles ⚡
+- **Project Showcase** — Highlights selected projects with descriptions and links
+- **Skills Section** — Visual representation of technical capabilities
+- **Contact Form** — Easy-to-use form for potential collaborators to reach out ✉️
+- **Smooth Animations** — Subtle CSS/JS animations for enhanced user experience
+- **Performance Optimized** — Fast loading times and efficient code
+
+---
 
 ## 🛠️ Built With
 
-- **HTML5** - Semantic markup for structure
-- **CSS3** - Custom styling with flexbox/grid for layouts
-- **Vanilla JavaScript** - Interactive elements and DOM manipulation
-- **Vercel** - Hosting and deployment platform
+- **React** — UI library
+- **Vite** — Development server & build tool
+- **Tailwind CSS** — Utility-first CSS framework
+- **Vanilla JavaScript/JSX** — Interactive elements and DOM logic
+- **Vercel** — Hosting and deployment platform
+
+---
 
 ## 🚀 Getting Started
 
 ### Prerequisites
 
-- Any modern web browser
-- Basic code editor (VS Code, Sublime Text, etc.)
+- Node.js (LTS recommended)
+- npm or yarn
 
 ### Installation
 
 1. Clone the repository
-   ```bash
-   git clone https://github.com/mayank-kumar-git/portfolio-website.git
-   ```
+```bash
+git clone https://github.com/mayank-kumar-git/portfolio-website.git
+```
 
-2. Navigate to the project directory
-   ```bash
-   cd portfolio-website
-   ```
+2. Install dependencies
+```bash
+cd portfolio-website
+npm install
+# or
+# yarn
+```
 
-3. Open the project
-   ```bash
-   # Open index.html in your browser
-   # Or use a local server like Live Server extension in VS Code
-   ```
+3. Run the development server
+```bash
+npm run dev
+# or
+# yarn dev
+```
+
+4. Build for production
+```bash
+npm run build
+# Preview production build
+npm run preview
+```
+
+---
 
 ## 📂 Project Structure
 
 ```
 portfolio-website/
-├── index.html         # Main HTML file
-├── css/               # CSS stylesheets
-│   ├── style.css      # Main stylesheet
-│   └── responsive.css # Media queries for responsiveness
-├── js/                # JavaScript files
-│   └── script.js      # Main JavaScript functionality
-├── images/            # Image assets
-├── assets/            # Other static assets
-└── README.md          # Project documentation
+├── index.html
+├── package.json
+├── postcss.config.js
+├── tailwind.config.js
+├── vite.config.js
+├── src/
+│   ├── main.jsx              # App entry
+│   ├── App.jsx               # App root + routes
+│   ├── index.css             # Tailwind + global styles
+│   ├── assets/               # Icons, images
+│   ├── components/           # Reusable UI components
+│   └── pages/                # Page-level components (About, Projects, Contact)
+└── README.md                 # Project documentation
 ```
+
+---
 
 ## 🔧 Customization
 
-This portfolio can be easily customized:
+- **Colors & Styling:** Edit Tailwind config (`tailwind.config.js`) or `src/index.css` to tweak colors and spacing.
+- **Content:** Update personal details, project items, and page copy in `src/pages` and `src/components`.
+- **Functionality:** Modify interactions/animations in component files under `src/components`.
 
-1. **Colors & Styling**: Edit the CSS variables in the `:root` selector in `style.css`
-2. **Content**: Update project information and personal details in `index.html`
-3. **Functionality**: Modify interactions and animations in `script.js`
+---
 
 ## 📈 Future Improvements
 
@@ -90,23 +112,29 @@ This portfolio can be easily customized:
 - [ ] Add more interactive elements
 - [ ] Improve loading performance with lazy loading
 
+---
+
 ## 🌐 Browser Support
 
 - Chrome (latest)
 - Firefox (latest)
 - Safari (latest)
 - Edge (latest)
-- Opera (latest)
+
+---
 
 ## 📄 License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is licensed under the MIT License - see the `LICENSE` file for details.
+
+---
 
 ## 📞 Contact
 
-Mayank Kumar - [mayankkumar.27062007@gmail.com](mailto:mayankkumar.27062007@gmail.com)
+Mayank Kumar - mayankkumar.27062007@gmail.com
 
-LinkedIn: [https://www.linkedin.com/in/kumarmayankupes](https://www.linkedin.com/in/kumarmayankupes)
+LinkedIn: https://www.linkedin.com/in/kumarmayankupes
+
 
 ---
 

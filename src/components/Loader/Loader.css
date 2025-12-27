@@ -1,0 +1,408 @@
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(200%);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.3;
+  }
+}
+
+@keyframes particleFloat {
+  0% {
+    transform: translateY(100vh) scale(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100px) scale(1);
+    opacity: 0;
+  }
+}
+
+@keyframes letterReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(20px) rotateX(-90deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) rotateX(0deg);
+  }
+}
+
+@keyframes underlineGrow {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes dotBounce {
+  0%, 80%, 100% {
+    transform: scale(0);
+    opacity: 0.3;
+  }
+  40% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes cornerPulse {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.1);
+  }
+}
+
+.loader-container {
+  position: fixed;
+  inset: 0;
+  /* Deep Space Black to Rich Purple gradient for modern dark theme */
+  background: linear-gradient(135deg, #0a0a0f 0%, #1a1a2e 50%, #0a0a0f 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  animation: fadeIn 0.5s ease-out;
+  overflow: hidden;
+}
+
+.loader-container.loader-exit {
+  animation: fadeOut 0.8s ease-out forwards;
+}
+
+/* Particles */
+.particles {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  /* Vibrant gradient for particles */
+  background: linear-gradient(135deg, #00d4ff, #7c3aed);
+  border-radius: 50%;
+  animation: particleFloat 5s linear infinite;
+  box-shadow: 0 0 10px rgba(124, 58, 237, 0.6);
+}
+
+/* Content */
+.loader-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+  animation: slideUp 0.8s ease-out;
+}
+
+/* Brand */
+.brand-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.brand-name {
+  font-size: 3.5rem;
+  font-weight: 700;
+  letter-spacing: 0.3rem;
+  color: transparent;
+  /* Vibrant multi-color gradient for premium text effect */
+  background: linear-gradient(90deg, #00d4ff, #7c3aed, #f472b6, #7c3aed, #00d4ff);
+  background-size: 200% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  animation: gradientShift 6s ease-in-out infinite;
+}
+
+.brand-subtitle {
+  font-size: 1.2rem;
+  font-weight: 400;
+  letter-spacing: 0.4rem;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* Progress Container */
+.progress-container {
+  width: 300px;
+  max-width: 90vw;
+}
+
+/* Progress Bar */
+.progress-bar-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.progress-bar-bg {
+  width: 100%;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 100px;
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  /* Vibrant gradient for progress indicator */
+  background: linear-gradient(90deg, #00d4ff, #7c3aed, #f472b6);
+  border-radius: 100px;
+  transition: width 0.3s ease-out;
+}
+
+.progress-bar-shine {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  animation: shimmer 2s infinite;
+}
+
+/* Progress Info */
+.progress-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 0.5rem;
+}
+
+.progress-percentage {
+  font-size: 1.5rem;
+  font-weight: 700;
+  /* Vibrant secondary accent color */
+  color: #a78bfa;
+  text-shadow: 0 0 20px rgba(167, 139, 250, 0.6);
+  font-variant-numeric: tabular-nums;
+}
+
+.loading-phase {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.7);
+  letter-spacing: 0.05rem;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+/* Loading Dots */
+.loading-dots {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  /* Vibrant gradient for dots */
+  background: linear-gradient(135deg, #00d4ff, #7c3aed);
+  animation: dotBounce 1.4s infinite ease-in-out;
+  box-shadow: 0 0 10px rgba(0, 212, 255, 0.6);
+}
+
+.dot:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.dot:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.dot:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+/* Corner Decorations */
+.corner-decoration {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  /* Vibrant violet border for subtle accent */
+  border: 2px solid rgba(124, 58, 237, 0.3);
+  pointer-events: none;
+  animation: cornerPulse 3s infinite ease-in-out;
+}
+
+.corner-decoration::before {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: radial-gradient(circle, rgba(0, 212, 255, 0.4), transparent);
+}
+
+.top-left {
+  top: 2rem;
+  left: 2rem;
+  border-right: none;
+  border-bottom: none;
+  border-top-left-radius: 4px;
+}
+
+.top-left::before {
+  top: -2px;
+  left: -2px;
+}
+
+.top-right {
+  top: 2rem;
+  right: 2rem;
+  border-left: none;
+  border-bottom: none;
+  border-top-right-radius: 4px;
+  animation-delay: 0.5s;
+}
+
+.top-right::before {
+  top: -2px;
+  right: -2px;
+}
+
+.bottom-left {
+  bottom: 2rem;
+  left: 2rem;
+  border-right: none;
+  border-top: none;
+  border-bottom-left-radius: 4px;
+  animation-delay: 1s;
+}
+
+.bottom-left::before {
+  bottom: -2px;
+  left: -2px;
+}
+
+.bottom-right {
+  bottom: 2rem;
+  right: 2rem;
+  border-left: none;
+  border-top: none;
+  border-bottom-right-radius: 4px;
+  animation-delay: 1.5s;
+}
+
+.bottom-right::before {
+  bottom: -2px;
+  right: -2px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .brand-name {
+    font-size: 2.2rem;
+    letter-spacing: 0.2rem;
+  }
+
+  .brand-subtitle {
+    font-size: 0.9rem;
+    letter-spacing: 0.3rem;
+  }
+
+  .progress-container {
+    width: 280px;
+  }
+
+  .progress-percentage {
+    font-size: 1.2rem;
+  }
+
+  .loading-phase {
+    font-size: 0.85rem;
+  }
+
+  .corner-decoration {
+    width: 50px;
+    height: 50px;
+  }
+
+  /* Mobile vertical scan - rotate the grid scan 90 degrees */
+  .mobile-grid-scan {
+    transform: rotate(90deg);
+    transform-origin: center center;
+    width: 100vh;
+    height: 100vw;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-top: -50vw;
+    margin-left: -50vh;
+  }
+}
