@@ -89,7 +89,7 @@ const About = () => {
 
             {/* Card 4 - Passionate Developer */}
             <div className="bg-gradient-to-br from-accent/20 to-surface/80 backdrop-blur-md border border-accent/40 rounded-2xl p-6 flex flex-col items-center min-h-[320px]">
-              <img src={images.A1} alt="Mayank Kumar" className="w-full h-40 object-cover rounded-lg mb-4" />
+              <img src={images.My_Image} alt="Mayank Kumar" className="w-full h-40 object-cover rounded-lg mb-4" />
               <h3 className="text-xl font-bold text-white mb-2">Passionate Developer</h3>
               <p className="text-accent/80 text-center text-sm">Building the future</p>
             </div>
@@ -187,7 +187,7 @@ const About = () => {
               </Card>
 
               <Card className="bg-gradient-to-br from-accent/20 to-surface/80 backdrop-blur-md border-accent/40 p-8 flex flex-col justify-center items-center">
-                <img src={images.A1} alt="Mayank Kumar" className="w-full h-3/4 object-cover rounded-lg mb-4" />
+                  <img src={images.A1} alt="Mayank Kumar" className="w-full h-3/4 object-cover rounded-lg mb-4" />
                 <h3 className="text-2xl font-bold text-white">Passionate Developer</h3>
                 <p className="text-accent/80 text-center mt-2">Building the future</p>
               </Card>

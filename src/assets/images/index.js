@@ -13,6 +13,7 @@ import EMC from './EMC.png';
 import DRT from './DRT.png';
 import vm from './vm.png';
 import core from './core.png';
+import A1 from './A1.jpg';
 
 export default {
   My_Image,
@@ -29,4 +30,5 @@ export default {
   DRT,
   core,
   vm,
+  A1,
 };
