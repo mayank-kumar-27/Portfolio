@@ -8,6 +8,7 @@ const Projects = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const carouselRef = useRef(null);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+  const [isHovered, setIsHovered] = useState(false);
 
   useEffect(() => {
     const handleResize = () => setIsMobile(window.innerWidth <= 768);
@@ -59,13 +60,13 @@ const Projects = () => {
   ];
 
   useEffect(() => {
-    if (!isMobile) {
+    if (!isMobile && !isHovered) {
       const interval = setInterval(() => {
         setCurrentIndex((prev) => (prev + 1) % projects.length);
       }, 3000);
       return () => clearInterval(interval);
     }
-  }, [projects.length, isMobile]);
+  }, [projects.length, isMobile, isHovered]);
 
   const colorMap = {
     cyan: {
@@ -241,7 +242,7 @@ const Projects = () => {
           </div>
 
           {/* Right Section - Stacked Cards with Details */}
-          <div ref={carouselRef} className="w-full lg:w-2/3 relative h-[650px] flex items-center justify-end">
+          <div ref={carouselRef} className="w-full lg:w-2/3 relative h-[650px] flex items-center justify-end" onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)} >
             <div className="relative w-full max-w-[500px] h-full flex items-center justify-end pr-8">
               {projects.map((project, index) => {
                 const position = (index - currentIndex + projects.length) % projects.length;
