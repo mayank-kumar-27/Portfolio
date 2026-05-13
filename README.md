@@ -8,7 +8,6 @@
 </div>
 
 ## 📋 Overview
-
 This repository contains the source code for my personal portfolio website, showcasing my projects, skills, and professional journey. Built with modern web tooling (React + Vite + Tailwind CSS), the site focuses on performance, responsiveness, and crisp visual design.
 
 🔗 **Live Demo:** https://mayank-kumar-portfolio.vercel.app/
